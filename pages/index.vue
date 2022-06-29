@@ -1,33 +1,49 @@
-import axios from 'axios';
 
 <template>
-  <div>
-    {{this.requestResult}}
+<div>
+  <div class="bg-color m-0">
+      <nuxt-link class="link" to="/archive">Archive</nuxt-link>
+  </div>
+    <h4 class="bg-color m-0 text-white text-center">
+      The Most Viewed
+    </h4>
+    <PopularNews />
+    <SectionsList :sections="sections" @selectedItem="getSelectedItem" class="bg-color" />
+    <h4 class="text-center bg-color m-0 text-white">
+      News Section : {{this.selectedItem}}
+    </h4>
+    <NewsList :posts="posts" :startSection="currentSection" ref="NewsList" />
   </div>
 </template>
 
 <script>
+import NewsList from "./../components/NewsList.vue"
+import SectionsList from "./../components/SectionsList.vue"
+import PopularNews from "~/components/PopularNews.vue"
+
 export default {
- data() {
+
+  components: {
+    SectionsList,
+    NewsList,
+    PopularNews
+  },
+
+  data() {
     return {
-      requestResult: null
+      selectedItem: "world",
+      currentSection: "world",
+      sections: [],
+      posts: []
     }
   },
 
-  mounted() {
-    this.getNews();
-  },
-
   methods: {
-    async getNews() {
-      while(true) {
-        this.requestResult = await this.$axios.get('https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=3cGGAzhEUGTJGXrdy5TNaTrU3ctblSEK');
-        await new Promise(resolve => setTimeout(resolve, 10000))
-      }
-    },
-
-    renderResult(n, result, photo){
-      
+    getSelectedItem(selectedItem) {
+      this.selectedItem = selectedItem;
+      this.currentSection = this.selectedItem;
+      this.$refs.NewsList.setCurrentSection(this.currentSection);
+      console.log("Selected in App "+ this.currentSection);
     }
   }
 }

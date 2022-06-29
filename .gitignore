@@ -69,7 +69,7 @@ typings/
 .nuxt
 
 # Nuxt generate
-#dist
+dist
 
 # vuepress build output
 .vuepress/dist
@@ -79,6 +79,9 @@ typings/
 
 # IDE / Editor
 .idea
+
+# Vs Code editor
+.vscode
 
 # Service worker
 sw.*

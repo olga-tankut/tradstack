@@ -1,3 +1,4 @@
 {
-    "nuxt.isNuxtApp": true
+    "nuxt.isNuxtApp": true,
+    "volar-document-features.trace.server": "off"
 }

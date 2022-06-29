@@ -1,0 +1,87 @@
+
+$theme-colors: (
+  'primary': #145bea,
+  'secondary': #833bec,
+  'success': #1ce1ac,
+  'info': #ff7d50,
+  'warning': #ffbe0b,
+  'danger': #ff007f,
+  'light': #c0ccda,
+  'dark': #001738,
+);
+
+@import '~/node_modules/bootstrap/scss/bootstrap.scss';
+@import '~/node_modules/bootstrap-vue/src/index.scss';
+
+
+.container {
+    section {
+        div {
+            a {
+                color: black;
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.card:hover {
+    transform: scale(1.05) !important;
+}
+.card {
+    transition: transform 0.25s ease;
+    border-radius: 0;
+    border: 0;
+}
+
+.bg-color {
+    background-color: rgba(50, 50, 50, 1);
+  }
+
+.dropdown {
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    margin: 0;
+}
+
+h4 {
+    font-style: italic;
+}
+.pending {
+    background-color: rgba(80, 77, 77, 1);
+    color: white;
+    text-align: center;
+    padding-bottom: 30%;
+}
+
+.link {
+    color: red;
+    padding-left: 3%;
+    font-size: 20px bold;
+    border: 2px;
+}
+
+.link:hover {
+    color: white;
+}
+
+.link.month {
+    color: white;
+    font-size: 30px;
+}
+
+.link.month:hover {
+    color: red;
+}
+
+.archive {
+    padding-bottom: 50%;
+    padding-right: 2%;
+    padding-left: 2%;
+}
+
+
+
+

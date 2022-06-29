@@ -1,0 +1,10 @@
+[build]
+
+command = "npm run generate"
+publish = "dist"
+
+[[redirects]]
+    from = "/archive/:year/:month"
+    to = "/.netlify/builders/callarchieve"
+    status = 200
+    force = true
